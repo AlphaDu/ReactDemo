@@ -4,11 +4,14 @@ import './App.css';
 import Node from './components/node'
 import {simpleHoc,refHoc} from './hoc/highOrderComponent'
 import WrappedComponent from './hoc/WrappedComponent'
+import StateTestComponent from './components/AsyncTestComponents'
+import funcEnhancer,{increaseByFunc,increaseByNormal} from './hoc/funcEnhancer'
 const SimpleHocComponent = simpleHoc(WrappedComponent);
 const RefHocComponent = refHoc(WrappedComponent);
+const EnhancedComponent = funcEnhancer(increaseByNormal)(StateTestComponent);
 class App extends Component {
     render(){
-        return (<SimpleHocComponent title="test"></SimpleHocComponent>)
+        return (<EnhancedComponent/>)
     }
 }
 class Tree extends Component{
