@@ -10,7 +10,7 @@
 }
 .node:first-child{
     top:80px;
-    left:-50px
+    left:-50px !important;
 }
 .node:last-child{
     top:80px;
